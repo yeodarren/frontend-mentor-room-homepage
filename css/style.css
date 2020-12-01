@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  font-size: 12px;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+      grid-template-areas: "hero hero hero hero shop shop shop" "hero hero hero hero shop shop shop" "featured-left featured-left about about about featured-right featured-right";
+}
+
+.grid .grid-item {
+  width: 100%;
+  height: 100%;
+}
+
+.grid .grid-item header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem;
+  width: 50%;
+}
+
+.grid .grid-item header a {
+  color: white;
+  text-decoration: none;
+}
+
+.grid .grid-item header .logo {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 80%;
+}
+
+.grid .grid-item header .menu {
+  display: none;
+}
+
+.grid .grid-item header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.grid .grid-item header nav .close {
+  display: none;
+  font-size: 1.5rem;
+}
+
+.hero {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  background-size: cover;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: hero;
+  position: relative;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.hero .slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: -92px;
+}
+
+.hero .slider button {
+  background-color: black;
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.hero .slider button:hover {
+  background-color: #a1a1a1;
+}
+
+.shop {
+  width: 100%;
+  height: 100%;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 3;
+  grid-area: shop;
+  background-color: white;
+  padding: 5rem 3rem;
+}
+
+.shop .shop-item {
+  display: none;
+}
+
+.shop .shop-item h1 {
+  color: black;
+  font-size: 2.5rem;
+  padding: 2rem;
+}
+
+.shop .shop-item p {
+  color: #a1a1a1;
+  font-size: 1rem;
+  padding: 0rem 2rem 2rem;
+  line-height: 1.5rem;
+}
+
+.shop a {
+  color: #454545;
+  text-decoration: none;
+  padding-left: 2rem;
+}
+
+.shop a:hover {
+  color: #a1a1a1;
+}
+
+.featured-left {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: featured-left;
+}
+
+.about {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  grid-area: about;
+  background-color: white;
+  padding: 3rem;
+}
+
+.about h1 {
+  color: black;
+  padding: 1rem 0rem;
+  text-align: left;
+}
+
+.about p {
+  color: #a1a1a1;
+  line-height: 1.5rem;
+  font-size: 1rem;
+}
+
+.featured-right {
+  -ms-grid-row: 3;
+  -ms-grid-column: 6;
+  -ms-grid-column-span: 2;
+  grid-area: featured-right;
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: 4fr;
+        grid-template-rows: 4fr;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+        grid-template-areas: "hero hero" "shop shop" "featured-left featured-left" "about about" "featured-right featured-right";
+  }
+  .grid .grid-item header {
+    text-align: center;
+    width: 100%;
+    margin: 0 -2rem 0 -2rem;
+  }
+  .grid .grid-item header nav {
+    position: absolute;
+    top: -100%;
+    background-color: white;
+    width: 100%;
+    height: 20%;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  .grid .grid-item header nav a {
+    color: black;
+    font-size: 1rem;
+  }
+  .grid .grid-item header nav .close {
+    display: block;
+    border: none;
+    background-color: white;
+    padding-left: 2rem;
+    color: #a1a1a1;
+    width: 2rem;
+    height: 2rem;
+  }
+  .grid .grid-item header .menu {
+    display: block;
+    margin-left: 2rem;
+    cursor: pointer;
+  }
+  .grid .grid-item .slider {
+    right: 0%;
+  }
+  .grid .hero {
+    height: 100vh;
+  }
+  .grid .shop {
+    min-height: 500px;
+  }
+  .grid .about {
+    min-height: 300px;
+    padding: 5rem;
+  }
+  .grid .featured-left img {
+    width: 100%;
+    height: auto;
+  }
+  .grid .featured-right img {
+    width: 100%;
+    height: auto;
+  }
+}
+/*# sourceMappingURL=style.css.map */
